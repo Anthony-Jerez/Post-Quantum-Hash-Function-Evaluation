@@ -1,10 +1,9 @@
 """
-The following hash function is based of the paper "Post-quantum hash functions using SLn(Fp)" 
-by Corentin Le Coz∗, Christopher Battarbee, Ram´ on Flores†,Thomas Koberda‡, and Delaram Kahrobaei§
+The following hash function is based of the published research paper "Post-quantum hash functions using SLn(Fp)" 
+by Corentin Le Coz, Christopher Battarbee, Ramon Flores, Thomas Koberda, and Delaram Kahrobaei.
 We use details given in section 2.3's general construction followed by an example of the 
 function using the same sequence given in 2.4's concrete example. The program uses the
 helper functions defined by s1(1) = B, s1(2) = -1, s1(3) = B-1.
-
 """
 import numpy as np
 
@@ -71,11 +70,10 @@ print("Result of the hash function:")
 print(result)
 
 """
-The result should be:
 Result of the hash function:
 [[ 6.94190977e+08  2.33260720e+08  2.92979520e+07]
  [-3.83796480e+07 -1.28962550e+07 -1.61979200e+06]
  [ 1.19193600e+06  4.00512000e+05  5.03050000e+04]]
  
-These numbers are equal to the ones given by the concrete example in section 2.
+These numbers are equal to the ones given by the concrete example in section 2 of the paper.
 """
