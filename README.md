@@ -1,6 +1,6 @@
 # Post-Quantum Hash ML Attack Demo
 
-This repository provides a demonstration of a machine learning–assisted pre-image attack on a post-quantum hash function on the parameter set: ($n=3$, $a=4$, $b=2$, walk length $\ell=4$ and prime $p=5$). It's based on the research paper *“Post‑quantum hash functions using $\mathrm{SL}_n(\mathbb F_p)$”* written by Corentin Le Coz, Christopher Battarbee, Ramon Flores, Thomas Koberda, and Delaram Kahrobaei. It includes scripts to:
+This repository provides a demonstration of a machine learning–assisted pre-image attack on a post-quantum hash function with the parameter set: ($n=3$, $a=4$, $b=2$, walk length $\ell=4$ and prime $p=5$). It's based on the research paper *“Post‑quantum hash functions using $\mathrm{SL}_n(\mathbb F_p)$”* written by Corentin Le Coz, Christopher Battarbee, Ramon Flores, Thomas Koberda, and Delaram Kahrobaei. It includes scripts to:
 
 1. **Construct the hash function** in Python and verify it against the published example.  
 2. **Generate a full dataset** of all 3^8 input sequences and their corresponding hash outputs.  
