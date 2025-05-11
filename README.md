@@ -88,6 +88,6 @@ With a **50% / 50% train–probe split**, we observed the following:
 
 - **Train MSE:** ~0.74  
 - **Probe MSE:** ~0.90  
-- **Average search-space reduction:** ~93.9%
+- **Average search-space reduction:** ~93.8%
 
 These results confirm the model's ability to generalize effectively from half the data and significantly reduce brute-force effort on a toy post-quantum hash instance.
