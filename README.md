@@ -81,13 +81,19 @@ pip install numpy torch
    Walk through code and metrics.
 
 ---
+## Evaluation Methodology
 
+We trained a PyTorch LSTM model to approximate a post-quantum hash function constructed over the special linear group SL(n, Fp) using its matrix-based constructed derived from Cayley graphs. The training dataset consisted of 3^8 = 6,561 total input–hash pairs, of which 50% were used for training and 50% reserved for evaluation. This 50/50 split was chosen to balance learning capacity and provide a large enough probe set to rigorously evaluate the model's effectiveness in a pre-image attack scenario.
+
+To simulate such an attack, we computed the model's output for every possible candidate input. Then, for each held-out hash in the probe set, we ranked all predicted hashes by their Euclidean distance to the target. The rank of the true input (the one that originally generated the hash) was recorded, and the search-space reduction was computed as the percentage of guesses an attacker could skip on average. This metric quantifies how much more efficiently an attacker could search using our model versus brute-force. Using this method, we observed an average search-space reduction of ~94%, demonstrating that the LSTM was able to meaningfully learn structural patterns in the hash function. This also validated the need for larger security parameters (e.g., larger matrix size n or modulus p).
+
+---
 ## Results
 
 With a **50% / 50% train–probe split**, we observed the following:
 
 - **Train MSE:** ~0.74  
 - **Probe MSE:** ~0.90  
-- **Average search-space reduction:** ~93.8%
+- **Average search-space reduction:** ~94%
 
 These results confirm the model's ability to generalize effectively from half the data and significantly reduce brute-force effort on a toy post-quantum hash instance.
